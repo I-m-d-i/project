@@ -1,17 +1,22 @@
 <template>
   <v-app>
-    <main-page/>
+    <v-container>
+      <div class="backImg" style="display: flex; flex-direction: column; padding-inline: 100px">
+        <header-component/>
+        <router-view style="margin-top: 10px;"/>
+      </div>
+    </v-container>
   </v-app>
 </template>
 
 <script>
-import main from './components/main-page';
+import header from './components/header.vue'
 
 export default {
   name: 'App',
 
   components: {
-    "main-page": main,
+    "header-component": header,
   },
 
   data: () => ({
@@ -19,3 +24,9 @@ export default {
   }),
 };
 </script>
+
+<style>
+.backImg {
+  background-image: url('./assets/backImg.png');
+}
+</style>
