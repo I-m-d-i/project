@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-  <div style="display: flex">
+  <div style="display: flex; padding-bottom: 30px">
     <v-spacer/>
     <v-img style="margin-top: 30px; max-width: 100%" src="../assets/img.png"
            max-height="2000px"

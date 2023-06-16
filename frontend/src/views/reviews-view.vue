@@ -12,7 +12,7 @@ export default {
 <template>
   <div style="padding-inline: 150px">
     <div>
-      <h2> Отзывы </h2>
+      <h2 style="font-size: 36px"> Отзывы </h2>
       <v-divider style="margin-block: 30px"/>
       <div style="padding-inline: 10px">
         <v-textarea
@@ -79,5 +79,7 @@ margin: 0">
 </template>
 
 <style scoped>
-
+.v-text-field--outlined, .v-text-field--solo {
+  border-radius: 15px;
+}
 </style>

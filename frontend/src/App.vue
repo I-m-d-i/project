@@ -1,11 +1,11 @@
 <template>
-  <v-app>
-    <v-container>
+  <v-app style="background: rgba(214, 227, 238, 0.42);">
+    <v-main>
       <div class="backImg" style="display: flex; flex-direction: column; padding-inline: 100px">
         <header-component/>
         <router-view style="margin-top: 10px;"/>
       </div>
-    </v-container>
+    </v-main>
   </v-app>
 </template>
 

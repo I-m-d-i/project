@@ -2,11 +2,15 @@
 
 export default {
   name: "header-component",
-  data: () => ({
-
-  }),
-  methods:{
-    scrollTo(id) {
+  data: () => ({}),
+  methods: {
+    async scrollTo(id) {
+      if (id === 'ourServices') {
+        if (this.$route.name!=="home"){
+          await this.$router.push({path: '/'})
+        }
+      }
+      await this.$nextTick()
       const el = document.getElementById(id);
       el.scrollIntoView({behavior: "smooth"});
     }
@@ -17,7 +21,7 @@ export default {
 
 <template>
   <v-row style="margin-top: 10px; max-height: 150px; width: 100%; padding: 10px;     flex-wrap: nowrap;">
-    <div   @click="$router.push({path:'/'})" style="display: flex;
+    <div @click="$router.push({path:'/'})" style="display: flex;
     cursor: pointer;
     flex-wrap: nowrap;
     flex-direction: row;
@@ -33,18 +37,18 @@ export default {
     </div>
     <v-spacer></v-spacer>
     <div class="nav">
-        <v-col  >
-          <v-btn href="/#/license" text class="License LOCSlot" @click="makeActive('License')" v-ripple="false"> Лицензия</v-btn>
-        </v-col>
-        <v-col>
-          <v-btn text class="OurServices LOCSlot" @click="scrollTo('ourServices')" v-ripple="false">Наши услуги</v-btn>
-        </v-col>
-        <v-col >
-          <v-btn href="/#/reviews" text class="Reviews LOCSlot"  >Отзывы</v-btn>
-        </v-col>
-        <v-col  >
-          <v-btn href="/#/contacts" text class="Contacts LOCSlot" >Контакты</v-btn>
-        </v-col>
+      <v-col>
+        <v-btn href="/#/license" text class="License LOCSlot" v-ripple="false"> Лицензия</v-btn>
+      </v-col>
+      <v-col>
+        <v-btn text class="OurServices LOCSlot" @click="scrollTo('ourServices')" v-ripple="false">Наши услуги</v-btn>
+      </v-col>
+      <v-col>
+        <v-btn href="/#/reviews" text class="Reviews LOCSlot">Отзывы</v-btn>
+      </v-col>
+      <v-col>
+        <v-btn href="/#/contacts" text class="Contacts LOCSlot">Контакты</v-btn>
+      </v-col>
     </div>
     <v-spacer></v-spacer>
 
@@ -58,6 +62,7 @@ export default {
 .v-application p {
   margin-bottom: 0 !important;
 }
+
 .nav {
   display: flex;
   flex-wrap: nowrap;
@@ -66,11 +71,13 @@ export default {
   flex-direction: row;
   align-content: center;
 }
-.DentistryName{
+
+.DentistryName {
   padding-left: 0 !important;
 }
-.DentistryName{
-  color:rgba(5,21,87,1)
+
+.DentistryName {
+  color: rgba(5, 21, 87, 1)
 }
 
 .License >>> .v-btn__content {
@@ -90,7 +97,7 @@ export default {
   opacity: 0 !important;
 }
 
-.Reviews >>> .v-btn__content{
+.Reviews >>> .v-btn__content {
   padding-right: 0 !important;
   margin-top: 0 !important;
   margin-right: 0 !important;

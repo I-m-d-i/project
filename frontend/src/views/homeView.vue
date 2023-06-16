@@ -13,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <v-flex id="services" class="backImg" style="margin-top: 104px">
+  <v-flex id="services"  style="margin-top: 104px">
     <v-row style="margin-top: 70px">
       <v-col style="">
         <div>

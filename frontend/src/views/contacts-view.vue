@@ -6,7 +6,7 @@ export default {
 </script>
 
 <template>
-  <v-flex>
+  <v-flex style="margin-left: 100px">
     <div>
       <p>Телефон</p>
       <a href="tel:+7 (391) 295-02-36">+7 (391) 295-02-36</a>
